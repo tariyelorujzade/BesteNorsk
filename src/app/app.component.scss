@@ -1,0 +1,124 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  background-color: whitesmoke;
+  .header-btn{
+      display: none;
+  }
+
+  .header-logo {
+    width: 35%;
+    img {
+      padding: 23px 23px 0;
+    }
+  }
+
+  .row {
+    .header-nav ul {
+      display: flex;
+      justify-content: flex-end;
+      margin: 0;
+         li {
+        list-style: none;
+        padding-right: 15px;
+        a.other-page{
+          //display: none;
+        }
+        a {
+          color: #595f6f;
+          white-space: nowrap;
+          position: relative;
+          font-family: Roboto, sans-serif;
+          display: block;
+          font-size: 16px;
+          padding: 25px 20px;
+          text-decoration: none;
+      
+          &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            border-top: 6px solid transparent;
+          }
+
+          &:hover {
+            color: #379680;
+
+            &::before {
+              border-top: 6px solid #379680;
+              transition: all .6s ease;
+            }
+          }
+        
+        }
+        a.active::before{
+            border-top: 6px solid #379680;
+         }
+         a:hover a.active::before{
+          border-top: 6px solid transparent;
+         }
+        
+      }
+    }
+  }
+
+}
+@media only screen  and (max-width:992px){
+  
+    header{
+      .header-logo {
+      width: 49%;
+      a img {
+        padding: 20px 3% 20px;
+     }
+    }
+    nav.header-nav{
+      width: 49%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+            ul{
+              position: fixed;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background-color: yellowgreen;
+              left: 0;
+              display: flex;
+              justify-content: center;
+              /* margin: 0; */
+              flex-direction: column;
+               li a.other-page{
+                display: block;
+              }
+            }
+           
+      
+        .header-btn{
+           display: block;
+            text-align: right;
+            
+            i.fas{
+              font-size: 30px;
+              padding: 0 2%;
+              cursor: pointer;
+              
+            }
+        }
+    }
+  }
+ 
+    
+}
+@media only screen and (max-width:1024){
+  .container .row div.header-logo{
+    width:28%;
+    
+  }
+}
