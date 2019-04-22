@@ -1,27 +1,57 @@
 <div class="wrapper">
-  <header>
-    <div class="container">
+  <div class="container">
+    <!--Header start-->
+    <header>
       <div class="row">
         <div class="header-logo"> <a routerLink=""><img src="../assets/img/header-logo.svg"> </a></div>
-          <nav class="header-nav">
-            <div (click)="openMenu()" class="header-btn"><i class="fas fa-bars"></i></div>
-            <ul [@wild]="state">
-              <li><a routerLink="" appCleaner routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> Beste  Casino Hoteller</a></li>
-              <li><a routerLink="games" appCleaner routerLinkActive="active">Utvalgte Spill</a></li>
-              <li><a routerLink="reviews" appCleaner routerLinkActive="active">Kasinohotell Vurderinger</a></li>
+        <nav class="header-nav">
+          <div (click)="toggleNavbar()" class="header-btn"><i class="fas fa-bars"></i></div>
+          <ul [ngClass]="{'show':navbarOpen}">
+            <li><a routerLink="" appCleaner routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> Beste
+                Casino Hoteller</a></li>
+            <li><a routerLink="games" appCleaner routerLinkActive="active">Utvalgte Spill</a></li>
+            <li><a routerLink="reviews" appCleaner routerLinkActive="active">Kasinohotell Vurderinger</a></li>
 
-              <li><a class="other-page" routerLink="om-oss" appCleaner routerLinkActive="active">Om Oss</a></li>
-              <li><a class="other-page" routerLink="kontakt-oss" appCleaner routerLinkActive="active">Kontakt Oss</a></li>
-              <li><a class="other-page" routerLink="regler-og-vilkar" appCleaner routerLinkActive="active">Regler Og  Vilkår</a></li>
-            </ul>
-          </nav>
+            <li class="other-page"><a routerLink="om-oss" appCleaner routerLinkActive="active">Om Oss</a></li>
+            <li class="other-page"><a routerLink="kontakt-oss" appCleaner routerLinkActive="active">Kontakt Oss</a></li>
+            <li class="other-page"><a routerLink="regler-og-vilkar" appCleaner routerLinkActive="active">Regler Og
+                Vilkår</a></li>
+          </ul>
+        </nav>
       </div>
-    </div>
-  </header>
-  <main>
-    <router-outlet></router-outlet>
-  </main>
-  <footer>
+    </header>
+    <!--Header end-->
+    <main>
+      <router-outlet></router-outlet>
+      <!--Main start-->
+      <div class="main-wrapper">
+        <div class="self-wrapper">
+          <!--Each main row-->
+          <div class="row">
+            <div class="col-md-2 col-sm-6 main-wrapper-img"><a href="#"><img src="../assets/img/casino.jpg"></a> </div>
 
-  </footer>
+            <div class="col-md-2 col-sm-6 main-wrapper-write"><h3> Spahotel Casino</h3>Kylpylaitoksentie 7, 57130 Savonlinna</div>
+
+            <div class="col-md-2 col-sm-6 main-wrapper-link"><p>Rangeringer</p>
+              <span><i class="fas fa-star"></i></span>
+              <span><i class="fas fa-star"></i></span>
+              <span><i class="fas fa-star"></i></span>
+              <span><i class="fas fa-star"></i></span>
+              <span><i class="fas fa-star"></i></span> <a routerLink="/les">Les anmeldelse</a>
+            </div>
+
+            <div class="col-md-2 col-sm-6 main-wrapper-point"></div>
+            <div class="col-md-4 main-wrapper-button"><a>Besøke Nettsiden</a></div>
+          </div>
+          <!--Each main row ending-->
+
+
+        </div>
+      </div>
+      <!--Main end-->
+    </main>
+    <footer>
+
+    </footer>
+  </div>
 </div>

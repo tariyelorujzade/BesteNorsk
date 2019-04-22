@@ -6,20 +6,20 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations:[
-      trigger('wild',[
-        state('close',style({position:'absolute', display:'none'})),
-        state('open',style({display:'block'})),
-        transition('*<=>*',animate(1000))
-      ]) 
+      // trigger('wild',[
+      //   state('close',style({ display:'none'})),
+      //   state('open',style({display:'block'})),
+      //   transition('*<=>*',animate(500))
+      // ]) 
     ]
 })
 export class AppComponent implements OnInit{
- state='close';
+ //state='close';
+ navbarOpen:boolean=false;
    
   ngOnInit(){ }
 
-  openMenu(){
-   console.log('clicked');
-   this.state=='close'?this.state='open':this.state='close';
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
   }
 }

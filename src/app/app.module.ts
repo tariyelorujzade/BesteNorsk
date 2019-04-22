@@ -9,6 +9,7 @@ import { HomeComponent } from './header/home/home.component';
 import { ReviewsComponent } from './header/reviews/reviews.component';
 import { GamesComponent } from './header/games/games.component';
 import { CleanerDirective } from './cleaner.directive';
+import { LinkComponent } from './link/link.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { CleanerDirective } from './cleaner.directive';
     ReviewsComponent,
     GamesComponent,
     CleanerDirective,
+    LinkComponent,
  
   ],
   imports: [

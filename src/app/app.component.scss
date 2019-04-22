@@ -5,13 +5,16 @@ body {
 }
 
 header {
-  background-color: whitesmoke;
-  .header-btn{
-      display: none;
+  background-color: white;
+
+  .header-btn {
+    display: none;
   }
 
   .header-logo {
     width: 35%;
+    z-index: 2;
+
     img {
       padding: 23px 23px 0;
     }
@@ -22,12 +25,15 @@ header {
       display: flex;
       justify-content: flex-end;
       margin: 0;
-         li {
+
+      li {
         list-style: none;
         padding-right: 15px;
-        a.other-page{
-          //display: none;
+
+        &.other-page {
+          display: none;
         }
+
         a {
           color: #595f6f;
           white-space: nowrap;
@@ -37,7 +43,7 @@ header {
           font-size: 16px;
           padding: 25px 20px;
           text-decoration: none;
-      
+
           &::before {
             position: absolute;
             content: '';
@@ -55,70 +61,157 @@ header {
               transition: all .6s ease;
             }
           }
-        
+
         }
-        a.active::before{
-            border-top: 6px solid #379680;
-         }
-         a:hover a.active::before{
+
+        a.active::before {
+          border-top: 6px solid #379680;
+        }
+
+        a:hover a.active::before {
           border-top: 6px solid transparent;
-         }
-        
+        }
+
       }
     }
   }
 
 }
-@media only screen  and (max-width:992px){
-  
-    header{
-      .header-logo {
+
+@media only screen and (max-width:992px) {
+
+  header {
+    .header-logo {
       width: 49%;
+
       a img {
         padding: 20px 3% 20px;
-     }
+      }
     }
-    nav.header-nav{
+
+    nav.header-nav {
       width: 49%;
       display: flex;
       align-items: center;
       justify-content: flex-end;
-            ul{
-              position: fixed;
-              top: 0;
-              width: 100%;
-              height: 100%;
-              background-color: yellowgreen;
-              left: 0;
-              display: flex;
-              justify-content: center;
-              /* margin: 0; */
-              flex-direction: column;
-               li a.other-page{
-                display: block;
-              }
+
+      ul {
+        display: none !important;
+        transform: translateY(-510px);
+
+
+        &.show {
+          display: flex !important;
+          transform: translateY(0px);
+          animation: open .4s ease;
+          z-index: 1;
+
+          @keyframes open {
+            from {
+              transform: translateY(-510px);
             }
-           
-      
-        .header-btn{
-           display: block;
-            text-align: right;
-            
-            i.fas{
-              font-size: 30px;
-              padding: 0 2%;
-              cursor: pointer;
-              
+
+            to {
+              transform: translateY(0px);
             }
+
+          }
+
         }
+
+
+
+        position: fixed;
+
+        // animation: all 3s ease;
+        top: 60px;
+        width: 100%;
+        left: 0;
+        background-color: white;
+        justify-content: center;
+        /* margin: 0; */
+        flex-direction: column;
+
+        li.other-page {
+          display: block !important;
+        }
+      }
+
+
+
+      .header-btn {
+        display: block;
+        text-align: right;
+        z-index: 3;
+
+
+
+        i.fas {
+          font-size: 30px;
+          padding: 0 2%;
+          cursor: pointer;
+          z-index: 3;
+
+        }
+      }
     }
   }
- 
-    
+
+
 }
-@media only screen and (max-width:1024){
-  .container .row div.header-logo{
-    width:28%;
-    
+
+@media only screen and (max-width:1024) {
+  .container .row div.header-logo {
+    width: 28%;
+
+  }
+}
+
+//////////// main wrapper styles
+.main-wrapper {
+  background-color: antiquewhite;
+
+  .self-wrapper {
+    padding: 20px;
+
+    .main-wrapper-img {
+      width: 168px;
+
+      a {
+        border: solid 4px #e1e1e1;
+        border-radius: 6px;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+      }
+    }
+
+
+    .main-wrapper-write {
+      width: 342px;
+
+      h3 {
+        font-size: 19px;
+        line-height: 1.26;
+        font-weight: 700;
+        text-decoration: underline;
+        margin-bottom: 10px;
+      }
+    }
+
+    .main-wrapper-link {
+      text-align: right;
+
+      a {
+        display: block;
+        font-size: 12px;
+        color: #0288d1;
+        text-decoration: underline;
+      }
+    }
+
+
   }
 }
