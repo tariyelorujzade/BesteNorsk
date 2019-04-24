@@ -165,18 +165,27 @@ header {
     width: 28%;
 
   }
-
-  .test{
-    color:red;
-  }
 }
 
 //////////// main wrapper styles
 .main-wrapper {
+
+  &.notdisplayed {
+    display: none;
+  }
+
+  &.displayed {
+    display: block;
+  }
+
   background-color: antiquewhite;
 
   .self-wrapper {
     padding: 20px;
+
+    .main-wrapper-point {
+      width: 130px;
+    }
 
     .main-wrapper-img {
       width: 168px;
@@ -206,16 +215,62 @@ header {
     }
 
     .main-wrapper-link {
-      text-align: right;
+
+      // text-align: right;
 
       a {
         display: block;
-        font-size: 12px;
-        color: #0288d1;
-        text-decoration: underline;
+        cursor: pointer;
+
+        text-align: right;
+
+        a {
+          display: block;
+
+          font-size: 12px;
+          color: #0288d1;
+          text-decoration: underline;
+        }
       }
+
+      .main-wrapper-point {
+        width: 145px;
+
+        .point-bagde {
+          font-family: Roboto, sans-serif;
+          text-align: center;
+          padding: 10px 30px;
+          color: #50555b;
+        }
+
+        span {
+          font-size: 50px;
+          font-weight: 400;
+          line-height: 40px;
+          letter-spacing: -1.9px;
+        }
+      }
+
+      .main-wrapper-button {
+        .btn-link {
+          display: inline-block;
+          text-align: center;
+          text-transform: uppercase;
+          font-size: 21px;
+          font-weight: 900;
+          line-height: normal;
+          padding: 17px 0 15px 0;
+          width: 170px;
+          color: #fff;
+          border-radius: 6px;
+          background-color: #379680;
+          -webkit-box-shadow: 0 3px 0 0 #1e584a;
+          box-shadow: 0 3px 0 0 #1e584a;
+        }
+
+      }
+
+
     }
-
-
   }
 }

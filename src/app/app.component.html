@@ -1,21 +1,20 @@
 <div class="wrapper">
   <div class="container">
     <!--Header start-->
+
     <header>
       <div class="row">
         <div class="header-logo"> <a routerLink=""><img src="../assets/img/header-logo.svg"> </a></div>
         <nav class="header-nav">
-          <div (click)="toggleNavbar()" class="header-btn"><i class="fas fa-bars"></i></div>
-          <ul [ngClass]="{'show':navbarOpen}">
-            <li><a routerLink="" appCleaner routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> Beste
-                Casino Hoteller</a></li>
-            <li><a routerLink="games" appCleaner routerLinkActive="active">Utvalgte Spill</a></li>
-            <li><a routerLink="reviews" appCleaner routerLinkActive="active">Kasinohotell Vurderinger</a></li>
+          <div (click)=" this.navbarOpen = !this.navbarOpen;" class="header-btn"><i class="fas fa-bars"></i></div>
+          <ul [ngClass]="{'show':navbarOpen}"> 
+            <li><a routerLink=""        (click)="getReturned()"       appCleaner routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> Beste Casino Hoteller</a></li>
+            <li><a routerLink="games"   (click)="getReturned()"       appCleaner routerLinkActive="active">Utvalgte Spill</a></li>
+            <li><a routerLink="reviews" (click)="getReturned()"        appCleaner routerLinkActive="active">Kasinohotell Vurderinger</a></li>
 
-            <li class="other-page"><a routerLink="om-oss" appCleaner routerLinkActive="active">Om Oss</a></li>
-            <li class="other-page"><a routerLink="kontakt-oss" appCleaner routerLinkActive="active">Kontakt Oss</a></li>
-            <li class="other-page"><a routerLink="regler-og-vilkar" appCleaner routerLinkActive="active">Regler Og
-                Vilkår</a></li>
+            <li class="other-page"><a routerLink="om-oss"            (click)="getReturned()"            appCleaner routerLinkActive="active">Om Oss</a></li>
+            <li class="other-page"><a routerLink="kontakt-oss"       (click)="getReturned()"       appCleaner routerLinkActive="active">Kontakt Oss</a></li>
+            <li class="other-page"><a routerLink="regler-og-vilkar"  (click)="getReturned()"  appCleaner routerLinkActive="active">Regler Og Vilkår</a></li>
           </ul>
         </nav>
       </div>
@@ -24,7 +23,9 @@
     <main>
       <router-outlet></router-outlet>
       <!--Main start-->
+      <div class="main-wrapper" [ngClass]="{'displayed':returned ,'notdisplayed':navigated}">
       <div class="main-wrapper">
+
         <div class="self-wrapper">
           <!--Each main row-->
           <div class="row">
@@ -37,21 +38,27 @@
               <span><i class="fas fa-star"></i></span>
               <span><i class="fas fa-star"></i></span>
               <span><i class="fas fa-star"></i></span>
-              <span><i class="fas fa-star"></i></span> <a routerLink="/les">Les anmeldelse</a>
+              <span><i class="fas fa-star"></i></span> <a (click)="navigateUrl()">Les anmeldelse</a>
             </div>
 
-            <div class="col-md-2 col-sm-6 main-wrapper-point"></div>
-            <div class="col-md-4 main-wrapper-button"><a>Besøke Nettsiden</a></div>
+            <div class="col-md-2 col-sm-6 main-wrapper-point"><div class="point-badge">Våre poeng</div><span>9.9 </span></div>
+            <div class="col-md-4 main-wrapper-button"><a class="btn-link" href="#">Besøke Nettsiden</a></div>
+          </div>
+          <!--Each main row ending-->
+
+               
+            </div>
+
           </div>
           <!--Each main row ending-->
 
 
         </div>
+      </main>
+      <footer>  </footer>
       </div>
       <!--Main end-->
-    </main>
-    <footer>
-
-    </footer>
+   
+ 
   </div>
-</div>
+

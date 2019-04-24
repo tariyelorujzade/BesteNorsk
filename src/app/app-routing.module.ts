@@ -9,7 +9,7 @@ const routes: Routes = [
   { path:'',component:HomeComponent,pathMatch:'full'},
   { path:'games',component:GamesComponent},
   { path:'reviews',component:ReviewsComponent, 
-      children:[ {path:'les',component:LinkComponent}] }
+    children:[{ path:'les',component:LinkComponent},]},
 
 ];
 

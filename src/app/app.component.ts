@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -16,10 +17,19 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 export class AppComponent implements OnInit{
  //state='close';
  navbarOpen:boolean=false;
+ navigated:boolean=false;
+ returned:boolean=false;
+
+ constructor(private router:Router,private route:ActivatedRoute){ }
    
   ngOnInit(){ }
 
-  toggleNavbar() {
-    this.navbarOpen = !this.navbarOpen;
+  getReturned(){
+    this.navigated=false;
+  }
+
+  navigateUrl(){
+    this.router.navigate(['reviews/les'],{relativeTo:this.route});
+    this.navigated=!this.navigated;
   }
 }
