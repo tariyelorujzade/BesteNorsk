@@ -132,11 +132,22 @@ header {
         text-decoration: underline;
         margin-bottom: 10px;
       }
+      span{
+        font-size: 17px;
+    line-height: 1.29;
+      }
     }
 
     .main-wrapper-link {
 
-
+      font-family: Roboto,sans-serif;
+      text-align: center;
+      padding: 10px 30px;
+      color: #50555b;
+      span{
+        display: block;
+        font-size: 15px;
+      }
         a {
           display: block;
           cursor: pointer;
@@ -146,13 +157,15 @@ header {
         }
     }
       .main-wrapper-point {
-        width: 145px;
+        width: 130px;
+        font-family: Roboto,sans-serif;
+        text-align: center;
+        padding: 10px 30px;
+        color: #50555b;
+    
 
-        .point-bagde {
-          font-family: Roboto, sans-serif;
-          text-align: center;
-          padding: 10px 30px;
-          color: #50555b;
+        div.point-badge {
+      
         }
 
         span {
