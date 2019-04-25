@@ -1,42 +1,45 @@
 <div class="wrapper">
   <div class="container">
     <!--Header start-->
-
     <header>
-      <div class="row">
-        <div class="header-logo"> <a routerLink=""><img src="../assets/img/header-logo.svg"> </a></div>
-        <nav class="header-nav">
-          <div (click)=" this.navbarOpen = !this.navbarOpen;" class="header-btn"><i class="fas fa-bars"></i></div>
-          <ul [ngClass]="{'show':navbarOpen}"> 
-            <li><a routerLink=""        (click)="getReturned()"       appCleaner routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> Beste Casino Hoteller</a></li>
-            <li><a routerLink="games"   (click)="getReturned()"       appCleaner routerLinkActive="active">Utvalgte Spill</a></li>
-            <li><a routerLink="reviews" (click)="getReturned()"        appCleaner routerLinkActive="active">Kasinohotell Vurderinger</a></li>
+      <div  [ngClass]="{'min-fixed':navbarOpen}"> 
+          <div class="row ">
 
-            <li class="other-page"><a routerLink="om-oss"            (click)="getReturned()"            appCleaner routerLinkActive="active">Om Oss</a></li>
-            <li class="other-page"><a routerLink="kontakt-oss"       (click)="getReturned()"       appCleaner routerLinkActive="active">Kontakt Oss</a></li>
-            <li class="other-page"><a routerLink="regler-og-vilkar"  (click)="getReturned()"  appCleaner routerLinkActive="active">Regler Og Vilkår</a></li>
-          </ul>
-        </nav>
+              <div class="header-logo"> <a routerLink=""><img src="../assets/img/header-logo.svg"> </a></div>
+             
+              <nav class="header-nav">
+                <div (click)=" this.navbarOpen = !this.navbarOpen;" class="header-btn"><i class="fas fa-bars"></i></div>
+                <ul [ngClass]="{'show':navbarOpen}"> 
+                  <li><a routerLink=""        (click)="getReturned()"       appCleaner routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> Beste Casino Hoteller</a></li>
+                  <li><a routerLink="games"   (click)="getReturned()"       appCleaner routerLinkActive="active">Utvalgte Spill</a></li>
+                  <li><a routerLink="reviews" (click)="getReturned()"        appCleaner routerLinkActive="active">Kasinohotell Vurderinger</a></li>
+      
+                  <li class="other-page"><a routerLink="om-oss"            (click)="getReturned()"            appCleaner routerLinkActive="active">Om Oss</a></li>
+                  <li class="other-page"><a routerLink="kontakt-oss"       (click)="getReturned()"       appCleaner routerLinkActive="active">Kontakt Oss</a></li>
+                  <li class="other-page"><a routerLink="regler-og-vilkar"  (click)="getReturned()"  appCleaner routerLinkActive="active">Regler Og Vilkår</a></li>
+                </ul>
+              </nav>
+            </div>
       </div>
+      
     </header>
     <!--Header end-->
     <main>
       <router-outlet></router-outlet>
       <!--Main start-->
       <div class="main-wrapper" [ngClass]="{'displayed':returned ,'notdisplayed':navigated}">
-      <div class="main-wrapper">
 
         <div class="self-wrapper">
           <!--Each main row-->
-          <div class="row">
+          <div class="left-right-container">
           <div class="left-wrapper">
-             <div class="col-md-2 col-sm-6 main-wrapper-img"><a href="#"><img src="../assets/img/casino.jpg"></a> </div>
+             <div class="left min main-wrapper-img"><a href="#"><img src="../assets/img/casino.jpg"></a> </div>
 
-            <div class="col-md-2 col-sm-6 main-wrapper-write"><h3> Spahotel Casino</h3><span>Kylpylaitoksentie 7, 57130 Savonlinna</span></div>
+            <div class="left min main-wrapper-write"><h3> Spahotel Casino</h3><span>Kylpylaitoksentie 7, 57130   Savonlinna</span></div>
           </div> 
 
           <div class="right-wrapper"> 
-              <div class="col-md-2 col-sm-6 main-wrapper-link"><span>Rangeringer</span>
+              <div class="min main-wrapper-link"><span>Rangeringer</span>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                   <i class="fas fa-star"></i>
@@ -44,10 +47,11 @@
                   <i class="fas fa-star"></i> <a (click)="navigateUrl()">Les anmeldelse</a>
                 </div>
     
-                <div class="col-md-2 col-sm-6 main-wrapper-point"><div class="point-badge">Våre poeng</div><span>9.9 </span></div>
+                <div class="min main-wrapper-point"><div class="point-badge">Våre poeng</div><span>9.9 </span></div>
                 
-                <div class="col-md-4 main-wrapper-button"><a class="btn-link" href="#">Besøke Nettsiden</a></div>
+               
           </div>
+          <div class=" main-wrapper-button"><a class="btn-link" href="#">Besøke Nettsiden</a></div>
        
           </div>
           <!--Each main row ending-->
@@ -55,16 +59,189 @@
                
             </div>
 
-          </div>
-          <!--Each main row ending-->
-
-
+         <div class="self-wrapper">
+                <!--Each main row-->
+                <div class="left-right-container">
+                <div class="left-wrapper">
+                   <div class="left min main-wrapper-img"><a href="#"><img src="../assets/img/aolbarg.jpg"></a> </div>
+      
+                  <div class="left min main-wrapper-write"><h3>Casino Aalborg</h3><span>Ved Stranden 16, 9000 Aalborg, Danmark</span></div>
+                </div> 
+      
+                <div class="right-wrapper"> 
+                    <div class="min main-wrapper-link"><span>Rangeringer</span>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> <a (click)="navigateUrl()">Les anmeldelse</a>
+                      </div>
+          
+                      <div class="min main-wrapper-point"><div class="point-badge">Våre poeng</div><span>9.6</span></div>
+                      
+                     
+                </div>
+                <div class=" main-wrapper-button"><a class="btn-link" href="#">Besøke Nettsiden</a></div>
+             
+                </div>
+                <!--Each main row ending-->
+      
+                     
+                  </div>
+                  <div class="self-wrapper">
+                      <!--Each main row-->
+                      <div class="left-right-container">
+                      <div class="left-wrapper">
+                         <div class="left min main-wrapper-img"><a href="#"><img src="../assets/img/silja.jpg"></a> </div>
+            
+                        <div class="left min main-wrapper-write"><h3>Silja Serenade Cruise Ship</h3><span>Kauppakatu 41, 40100 Jyväskylä</span></div>
+                      </div> 
+            
+                      <div class="right-wrapper"> 
+                          <div class="min main-wrapper-link"><span>Rangeringer</span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i>
+                              <i class="fas fa-star"></i> <a (click)="navigateUrl()">Les anmeldelse</a>
+                            </div>
+                
+                            <div class="min main-wrapper-point"><div class="point-badge">Våre poeng</div><span>9.2</span></div>
+                            
+                           
+                      </div>
+                      <div class=" main-wrapper-button"><a class="btn-link" href="#">Besøke Nettsiden</a></div>
+                   
+                      </div>
+                      <!--Each main row ending-->
+            
+                           
+                        </div>
+                        <div class="self-wrapper">
+                            <!--Each main row-->
+                            <div class="left-right-container">
+                            <div class="left-wrapper">
+                               <div class="left min main-wrapper-img"><a href="#"><img src="../assets/img/cosmopol.png"></a> </div>
+                  
+                              <div class="left min main-wrapper-write"><h3>Casino Cosmopol Malmø</h3><span>Slottsgatan 33, 211 33 Malmø, Sverige</span></div>
+                            </div> 
+                  
+                            <div class="right-wrapper"> 
+                                <div class="min main-wrapper-link"><span>Rangeringer</span>
+                                  <i class="fas fa-star"></i>
+                                  <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i> <a (click)="navigateUrl()">Les anmeldelse</a>
+                                  </div>
+                      
+                                  <div class="min main-wrapper-point"><div class="point-badge">Våre poeng</div><span>9.7</span></div>
+                                  
+                                 
+                            </div>
+                            <div class=" main-wrapper-button"><a class="btn-link" href="#">Besøke Nettsiden</a></div>
+                         
+                            </div>
+                            <!--Each main row ending-->
+                  
+                                 
+                              </div>
+                              <div class="self-wrapper">
+                                  <!--Each main row-->
+                                  <div class="left-right-container">
+                                  <div class="left-wrapper">
+                                     <div class="left min main-wrapper-img"><a href="#"><img src="../assets/img/radisoon.png"></a> </div>
+                        
+                                    <div class="left min main-wrapper-write"><h3>Radisson Blu Scandinavia Hotel</h3><span>Amager Blvd. 70, 2300 København S, Danmark</span></div>
+                                  </div> 
+                        
+                                  <div class="right-wrapper"> 
+                                      <div class="min main-wrapper-link"><span>Rangeringer</span>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                          <i class="fas fa-star"></i>
+                                          <i class="fas fa-star"></i>
+                                          <i class="fas fa-star"></i> <a (click)="navigateUrl()">Les anmeldelse</a>
+                                        </div>
+                            
+                                        <div class="min main-wrapper-point"><div class="point-badge">Våre poeng</div><span>9.0</span></div>
+                                        
+                                       
+                                  </div>
+                                  <div class=" main-wrapper-button"><a class="btn-link" href="#">Besøke Nettsiden</a></div>
+                               
+                                  </div>
+                                  <!--Each main row ending-->
+                        
+                                       
+                                    </div>
+                                    <div class="self-wrapper">
+                                        <!--Each main row-->
+                                        <div class="left-right-container">
+                                        <div class="left-wrapper">
+                                           <div class="left min main-wrapper-img"><a href="#"><img src="../assets/img/heidi.png"></a> </div>
+                              
+                                          <div class="left min main-wrapper-write"><h3>Radisson Blu Scandinavia Hotel</h3><span>Munkebjergvej 125, 7100 Vejle, Danmark</span></div>
+                                        </div> 
+                              
+                                        <div class="right-wrapper"> 
+                                            <div class="min main-wrapper-link"><span>Rangeringer</span>
+                                              <i class="fas fa-star"></i>
+                                              <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i> <a (click)="navigateUrl()">Les anmeldelse</a>
+                                              </div>
+                                  
+                                              <div class="min main-wrapper-point"><div class="point-badge">Våre poeng</div><span>9.5</span></div>
+                                              
+                                             
+                                        </div>
+                                        <div class=" main-wrapper-button"><a class="btn-link" href="#">Besøke Nettsiden</a></div>
+                                     
+                                        </div>
+                                        <!--Each main row ending-->
+                              
+                                             
+                                          </div>
+              
+               <div class="text-content">
+                  <h2>Vil du prøve lykken i eventyrenes og mytologiens land? Nord-Europa er et av de områdene med eldst gambling historie. Med våre topp 10 land-baserte kasinoer og kasino-hotell basert I Nord-Europa kan du bli den heldige guden som vinner din egen kasino opplevelse!</h2>
+                   <p>Gambling historien går tilbake til vikingtiden i Nord-Europa. Spillene på den tiden varierte fra terningspill, til spill om øyer mellom konger av Sverige og Norge. For å ikke glemme, “spill om hoder” mellom norrøne guder. Ja, tilstandene var harde og voldelige under vikingtiden og den norrøne mytologien. Heldigvis trenger ikke du gamble på Thor med hammeren eller utsette deg for farlige situasjoner som norrøne guder symboliserer.<br>
+                        Når du besøker et av våre topp 10 land-baserte kasinoer og kasinohotell I Nord-Europa er alt du behøver gjøre å nyte ekstra avslappende underholdning med unik mat og drikke.<br>
+                   Sjekk ut kasinoene og kasinohotellene I vår topp 10 liste og fortell oss hva du tenker. Alle alternativene tilbyr forskjellige type spill. Alt fra temabaserte spilleautomater, til poker og andre tradisjonelle bordspill. Du kan sjekke ut anmeldelser og hotelldetaljer I anmeldelse seksjonen for å finne det alternativet som passer ditt hjerte og lykkebehov best.<br>
+                 Vi garanterer deg gud-givende glede. I alle tilfeller er vi åpne for tilbakemeldinger og anmeldelser for å forbedre vår liste og for å kunne tilby deg den mest personlig tilpassede kasino opplevelsen.</p>
+                                        
+                  </div>                                
         </div>
-      </main>
-      <footer>  </footer>
-      </div>
-      <!--Main end-->
-   
- 
+    </main>
+    <!--Footer start-->
+    <footer class="footer-wrapper">
+          <section class="container">
+          <div class="footer-content"> 
+            <div class="footer-brand">
+              <img src="../assets/img/header-logo.svg">
+              <p> Find The Best Casino Hotels For You</p>
+              <span> Opphavsrett © 2019. Alle Rettigheter Forbeholdt</span>
+            </div>
+            <div class="footer-left-menu"> 
+              <ul>
+                <li><a href="#">Beste Casino Hoteller</a></li>
+                <li><a href="#">Utvalgte Spill</a></li>
+                <li><a href="#">Kasinohotell Vurderinger</a></li>
+              </ul>
+            </div>
+            <div class="footer-right-menu">
+              <ul>
+                <li><a href="#">Om Oss </a></li>
+                <li><a href="#"> Kontakt Oss</a></li>
+                <li><a href="#"> Regler Og Vilkår</a></li>
+              </ul>
+            </div>
+          </div>
+          </section>
+    </footer>
+    <!--Footer end-->
+    </div>
   </div>
 
