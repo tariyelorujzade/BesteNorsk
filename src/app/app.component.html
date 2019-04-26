@@ -1,25 +1,24 @@
 <div class="wrapper">
   <div class="container">
     <!--Header start-->
-    <header>
-      <div  [ngClass]="{'min-fixed':navbarOpen}"> 
-          <div class="row ">
-
+    <header  [ngClass]="{'min-fixed':navbarOpen}">
+      <div class="row"> 
+          <div class="nav-row">
               <div class="header-logo"> <a routerLink=""><img src="../assets/img/header-logo.svg"> </a></div>
-             
-              <nav class="header-nav">
-                <div (click)=" this.navbarOpen = !this.navbarOpen;" class="header-btn"><i class="fas fa-bars"></i></div>
-                <ul [ngClass]="{'show':navbarOpen}"> 
-                  <li><a routerLink=""        (click)="getReturned()"       appCleaner routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> Beste Casino Hoteller</a></li>
-                  <li><a routerLink="games"   (click)="getReturned()"       appCleaner routerLinkActive="active">Utvalgte Spill</a></li>
-                  <li><a routerLink="reviews" (click)="getReturned()"        appCleaner routerLinkActive="active">Kasinohotell Vurderinger</a></li>
-      
-                  <li class="other-page"><a routerLink="om-oss"            (click)="getReturned()"            appCleaner routerLinkActive="active">Om Oss</a></li>
-                  <li class="other-page"><a routerLink="kontakt-oss"       (click)="getReturned()"       appCleaner routerLinkActive="active">Kontakt Oss</a></li>
-                  <li class="other-page"><a routerLink="regler-og-vilkar"  (click)="getReturned()"  appCleaner routerLinkActive="active">Regler Og Vilkår</a></li>
-                </ul>
-              </nav>
-            </div>
+              <div (click)=" this.navbarOpen = !this.navbarOpen;" class="header-btn"><i class="fas fa-bars"></i></div>
+          </div>
+
+            <nav class="header-nav">
+              <ul [ngClass]="{'show':navbarOpen}"> 
+                <li><a routerLink=""        (click)="getReturned()"       appCleaner routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"> Beste Casino Hoteller</a></li>
+                <li><a routerLink="games"   (click)="getReturned()"       appCleaner routerLinkActive="active">Utvalgte Spill</a></li>
+                <li><a routerLink="reviews" (click)="getReturned()"        appCleaner routerLinkActive="active">Kasinohotell Vurderinger</a></li>
+    
+                <li class="other-page"><a routerLink="om-oss"            (click)="getReturned()"            appCleaner routerLinkActive="active">Om Oss</a></li>
+                <li class="other-page"><a routerLink="kontakt-oss"       (click)="getReturned()"       appCleaner routerLinkActive="active">Kontakt Oss</a></li>
+                <li class="other-page"><a routerLink="regler-og-vilkar"  (click)="getReturned()"  appCleaner routerLinkActive="active">Regler Og Vilkår</a></li>
+              </ul>
+            </nav>
       </div>
       
     </header>
@@ -219,11 +218,15 @@
     <footer class="footer-wrapper">
           <section class="container">
           <div class="footer-content"> 
+
             <div class="footer-brand">
               <img src="../assets/img/header-logo.svg">
               <p> Find The Best Casino Hotels For You</p>
-              <span> Opphavsrett © 2019. Alle Rettigheter Forbeholdt</span>
+              <p> Opphavsrett © 2019. Alle Rettigheter Forbeholdt</p>
             </div>
+
+           
+
             <div class="footer-left-menu"> 
               <ul>
                 <li><a href="#">Beste Casino Hoteller</a></li>

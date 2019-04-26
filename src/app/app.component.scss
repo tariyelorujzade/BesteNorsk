@@ -5,7 +5,11 @@ body {
 }
 
 header {
-
+ 
+.nav-row{
+  display: flex;
+  width: 33%;
+}
 
   .header-btn {
     display: none;
@@ -20,20 +24,21 @@ header {
     }
   }
 
-  .row {
-    .header-nav ul {
+  .header-nav {
+    width: 60%;
+    ul {
       display: flex;
       justify-content: flex-end;
       margin: 0;
-
+  
       li {
         list-style: none;
         padding-right: 15px;
-
+  
         &.other-page {
           display: none;
         }
-
+  
         a {
           color: #595f6f;
           white-space: nowrap;
@@ -43,7 +48,7 @@ header {
           font-size: 16px;
           padding: 25px 20px;
           text-decoration: none;
-
+  
           &::before {
             position: absolute;
             content: '';
@@ -52,29 +57,30 @@ header {
             left: 0;
             border-top: 6px solid transparent;
           }
-
+  
           &:hover {
             color: #379680;
-
+  
             &::before {
               border-top: 6px solid #379680;
               transition: all .6s ease;
             }
           }
-
+  
         }
-
+  
         a.active::before {
           border-top: 6px solid #379680;
         }
-
+  
         a:hover a.active::before {
           border-top: 6px solid transparent;
         }
-
+  
       }
     }
   }
+
 
 }
 
@@ -84,6 +90,7 @@ footer{
     .footer-content{
       display: flex;
       .footer-brand{
+
         width: 45%;
         p{
           font-size: 18px;
@@ -274,22 +281,42 @@ footer{
     background-color: white;
     position: relative;
     z-index: 22222;
-    .min-fixed{
+    &.min-fixed{
       position: fixed;
-      background-color: white;
-      width: 90%;
+      background-color: red;
+      width: 100%;
       z-index: 5;
     }
+    .nav-row{
+      width: 100%;
+    }
     .header-logo {
-      width: 49%;
+      width: 40%;
 
       a img {
-        padding: 20px 3% 20px;
+        padding: 20px 0px 20px;
       }
     }
+    
+    .header-btn {
+      display: flex;
+      text-align: right;
+      z-index: 3;
+      width: 40%;
+      align-items: center;
+      justify-content: flex-end;
 
+
+      i.fas {
+        font-size: 30px;
+        padding: 0 2%;
+        cursor: pointer;
+        z-index: 3;
+
+      }
+    }
     nav.header-nav {
-      width: 49%;
+     // width: 49%;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -335,21 +362,6 @@ footer{
 
 
 
-      .header-btn {
-        display: block;
-        text-align: right;
-        z-index: 3;
-
-
-
-        i.fas {
-          font-size: 30px;
-          padding: 0 2%;
-          cursor: pointer;
-          z-index: 3;
-
-        }
-      }
     }
   }
   .main-wrapper{
@@ -402,7 +414,25 @@ footer{
       }
     }
   }
+  footer.footer-wrapper {
+    .footer-content{
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .footer-brand{
+        width: 50%;
+      }
+      .footer-address{
 
+      }
+      .footer-left-menu{
+        width: 100%;
+      }
+      .footer-right-menu{
+        width:100%;
+      }
+    }
+  }
 
 
 }
